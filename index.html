@@ -3,19 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amelia Gardens | Solares desde RD$900,000</title>
-  <meta name="description" content="Adquiere tu solar en Amelia Gardens, km 25 de la carretera Yamasá. Separa desde RD$10,000 y consulta facilidades de financiamiento." />
+  <title>Amelia Gardens | Comunidad familiar en la naturaleza – Km 25, Santo Domingo Norte</title>
+  <meta name="description" content="Amelia Gardens: solares desde RD$900,000 en una comunidad diseñada para familias. Km 25, carretera Villa Mella–Yamasá, Santo Domingo Norte. Separa desde RD$10,000." />
   <meta name="theme-color" content="#1f5a3f" />
-  <meta property="og:title" content="Amelia Gardens | Tu solar, tu futuro" />
-  <meta property="og:description" content="Solares desde RD$900,000. Separa desde RD$10,000." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Amelia Gardens | Construye el futuro de tu familia" />
+  <meta property="og:description" content="Tu solar en una comunidad diseñada para crecer, compartir y vivir rodeado de naturaleza. Desde RD$900,000. Separa desde RD$10,000." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&q=80" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="es_DO" />
+  <meta property="og:site_name" content="Amelia Gardens" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Amelia Gardens | Construye el futuro de tu familia" />
+  <meta name="twitter:description" content="Tu solar en una comunidad diseñada para crecer, compartir y vivir rodeado de naturaleza." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&q=80" />
+
+  <!-- Schema.org LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Amelia Gardens",
+    "description": "Comunidad residencial familiar con solares desde RD$900,000 en Km 25, carretera Villa Mella–Yamasá, Santo Domingo Norte.",
+    "url": "",
+    "telephone": "+18496264949",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Carretera Villa Mella–Yamasá, Km. 25",
+      "addressLocality": "Santo Domingo Norte",
+      "addressCountry": "DO"
+    },
+    "sameAs": [
+      "https://instagram.com/ameliagardensrd"
+    ]
+  }
+  </script>
+
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://images.unsplash.com" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="brand" href="#inicio" aria-label="Amelia Gardens, inicio">
@@ -30,7 +68,7 @@
       <nav id="nav-menu" class="nav-menu" aria-label="Navegación principal">
         <a href="#proyecto">Proyecto</a>
         <a href="#beneficios">Beneficios</a>
-        <a href="#financiamiento">Financiamiento</a>
+        <a href="#galeria">Galería</a>
         <a href="#contacto">Contacto</a>
         <a class="btn btn-sm btn-primary whatsapp-link" href="#" target="_blank" rel="noopener">Quiero información</a>
       </nav>
@@ -38,132 +76,328 @@
   </header>
 
   <main id="contenido">
-    <section id="inicio" class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">Km 25, carretera Yamasá</span>
-          <h1>Tu solar.<br><span>Tu futuro.</span></h1>
-          <p class="hero-text">Adquiere tu solar en Amelia Gardens desde <strong>RD$900,000</strong>, separando desde <strong>RD$10,000</strong> y con facilidades de financiamiento.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary whatsapp-link" href="#" target="_blank" rel="noopener">Solicitar información</a>
-            <a class="btn btn-secondary whatsapp-visit-link" href="#" target="_blank" rel="noopener">Agendar una visita</a>
-          </div>
-          <p class="microcopy">Precios, disponibilidad y condiciones sujetos a confirmación.</p>
-        </div>
 
-        <div class="hero-visual" aria-label="Presentación de Amelia Gardens">
-          <div class="visual-card">
-            <div class="visual-topline">Amelia Gardens</div>
-            <div class="visual-landscape">
-              <span class="sun"></span>
-              <span class="hill hill-1"></span>
-              <span class="hill hill-2"></span>
-              <span class="plot plot-1"></span>
-              <span class="plot plot-2"></span>
-              <span class="plot plot-3"></span>
-            </div>
-            <div class="visual-caption">
-              <strong>Una oportunidad para dar el próximo paso</strong>
-              <span>Terrenos para planificar tu hogar o inversión a largo plazo.</span>
-            </div>
-          </div>
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="container hero-inner fade-up">
+        <span class="eyebrow eyebrow-light">Km 25, carretera Villa Mella–Yamasá</span>
+        <h1>Construye el futuro<br><span>de tu familia.</span></h1>
+        <p class="hero-text">Tu solar en una comunidad diseñada para crecer, compartir y vivir rodeado de naturaleza.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary whatsapp-visit-link" href="#" target="_blank" rel="noopener">Agenda tu visita</a>
+          <a class="btn btn-outline maps-link" href="#" target="_blank" rel="noopener">Ver ubicación</a>
         </div>
+        <p class="microcopy">Precios, disponibilidad y condiciones sujetos a confirmación.</p>
       </div>
     </section>
 
+    <!-- STATS -->
     <section class="stats" aria-label="Información principal">
       <div class="container stats-grid">
-        <article><strong>RD$900,000</strong><span>Precio desde</span></article>
-        <article><strong>RD$10,000</strong><span>Separación desde</span></article>
-        <article><strong>Financiamiento</strong><span>Opciones disponibles</span></article>
-        <article><strong>Km 25</strong><span>Carretera Yamasá</span></article>
+        <article class="fade-up"><strong>RD$900,000</strong><span>Precio desde</span></article>
+        <article class="fade-up"><strong>RD$10,000</strong><span>Separación desde</span></article>
+        <article class="fade-up"><strong>Financiamiento</strong><span>Opciones disponibles</span></article>
+        <article class="fade-up"><strong>Km 25</strong><span>Carretera Yamasá</span></article>
       </div>
     </section>
 
+    <!-- EL PROYECTO -->
     <section id="proyecto" class="section">
-      <div class="container two-col">
+      <div class="container two-col fade-up">
         <div>
           <span class="eyebrow">El proyecto</span>
           <h2>Un espacio para comenzar a construir tus planes</h2>
         </div>
         <div>
-          <p>Amelia Gardens ofrece una alternativa accesible para familias, parejas e inversionistas que desean adquirir un solar y planificar su próximo paso con acompañamiento comercial.</p>
+          <p>Amelia Gardens es una comunidad familiar rodeada de naturaleza, diseñada para quienes quieren crecer, construir y vivir en armonía con el entorno. Un lugar donde los niños juegan seguros, las familias comparten y la vida transcurre a otro ritmo.</p>
           <p>Solicita la disponibilidad actual, conoce las opciones de pago y agenda una visita para recibir orientación personalizada.</p>
         </div>
       </div>
     </section>
 
+    <!-- POR QUÉ AMELIA GARDENS -->
     <section id="beneficios" class="section section-soft">
       <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Beneficios</span>
-          <h2>Una oportunidad clara y accesible</h2>
+        <div class="section-heading fade-up">
+          <span class="eyebrow">Por qué Amelia Gardens</span>
+          <h2>Diseñado para la vida que mereces</h2>
         </div>
         <div class="cards-grid">
-          <article class="info-card">
-            <span class="icon">01</span>
-            <h3>Entrada accesible</h3>
-            <p>Separa desde RD$10,000 y recibe orientación sobre los pasos siguientes.</p>
+          <article class="info-card fade-up">
+            <span class="icon icon-emoji">🌳</span>
+            <h3>Naturaleza</h3>
+            <p>Vive rodeado de árboles, aire fresco y espacios verdes en pleno contacto con la naturaleza dominicana.</p>
           </article>
-          <article class="info-card">
-            <span class="icon">02</span>
-            <h3>Opciones de financiamiento</h3>
-            <p>Consulta las alternativas disponibles según las condiciones aplicables.</p>
+          <article class="info-card fade-up">
+            <span class="icon icon-emoji">👨‍👩‍👧</span>
+            <h3>Comunidad Familiar</h3>
+            <p>Un vecindario seguro donde los niños crecen libres y las familias comparten momentos inolvidables.</p>
           </article>
-          <article class="info-card">
-            <span class="icon">03</span>
-            <h3>Patrimonio propio</h3>
-            <p>Da el paso hacia la adquisición de un terreno para tus planes futuros.</p>
+          <article class="info-card fade-up">
+            <span class="icon icon-emoji">🛣</span>
+            <h3>Excelente Ubicación</h3>
+            <p>Km 25, carretera Villa Mella–Yamasá. Conectado con la ciudad, pero lejos del ruido.</p>
           </article>
-          <article class="info-card">
-            <span class="icon">04</span>
-            <h3>Atención personalizada</h3>
-            <p>Recibe acompañamiento para disponibilidad, selección y proceso de separación.</p>
+          <article class="info-card fade-up">
+            <span class="icon icon-emoji">💰</span>
+            <h3>Inversión Inteligente</h3>
+            <p>Adquiere un activo real desde RD$900,000 con opciones de financiamiento y separación accesible.</p>
           </article>
-          <article class="info-card">
-            <span class="icon">05</span>
-            <h3>Ubicación con potencial</h3>
-            <p>Proyecto ubicado en el km 25 de la carretera Yamasá.</p>
+          <article class="info-card fade-up">
+            <span class="icon icon-emoji">🏡</span>
+            <h3>Tu hogar del futuro</h3>
+            <p>Planifica la vivienda que siempre soñaste, en un terreno propio, con acompañamiento personalizado.</p>
           </article>
-          <article class="info-card">
-            <span class="icon">06</span>
-            <h3>Planifica tu futuro hogar</h3>
-            <p>Una base para proyectar una vivienda de acuerdo con tus posibilidades.</p>
+          <article class="info-card fade-up">
+            <span class="icon icon-emoji">☀️</span>
+            <h3>Escapada de fin de semana</h3>
+            <p>Disfruta los fines de semana en familia, al aire libre, con la tranquilidad del campo dominicano.</p>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- IMAGINA TU NUEVA VIDA -->
+    <section id="lifestyle" class="section section-lifestyle">
+      <div class="container">
+        <div class="section-heading fade-up">
+          <span class="eyebrow">Estilo de vida</span>
+          <h2>Imagina tu nueva vida</h2>
+          <p class="section-lead">Cada rincón de Amelia Gardens fue pensado para crear momentos que duran para siempre.</p>
+        </div>
+        <div class="lifestyle-grid">
+          <article class="lifestyle-card fade-up">
+            <div class="lifestyle-img">
+              <img src="https://images.unsplash.com/photo-1543340904-0ef1bb7aefad?w=600&q=75&auto=format" alt="Familia disfrutando el fin de semana al aire libre" loading="lazy" width="600" height="400" />
+            </div>
+            <div class="lifestyle-body">
+              <h3>Fines de semana en familia</h3>
+              <p>Mañanas tranquilas, desayunos al aire libre y tardes llenas de risas en familia.</p>
+            </div>
+          </article>
+          <article class="lifestyle-card fade-up">
+            <div class="lifestyle-img">
+              <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=75&auto=format" alt="Niños jugando seguros en la comunidad" loading="lazy" width="600" height="400" />
+            </div>
+            <div class="lifestyle-body">
+              <h3>Niños que crecen libres</h3>
+              <p>Un entorno seguro donde los pequeños exploran, juegan y construyen recuerdos.</p>
+            </div>
+          </article>
+          <article class="lifestyle-card fade-up">
+            <div class="lifestyle-img">
+              <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=75&auto=format" alt="Senderos naturales entre árboles" loading="lazy" width="600" height="400" />
+            </div>
+            <div class="lifestyle-body">
+              <h3>Senderos naturales</h3>
+              <p>Camina entre árboles, respira aire puro y reconecta con la naturaleza cada día.</p>
+            </div>
+          </article>
+          <article class="lifestyle-card fade-up">
+            <div class="lifestyle-img">
+              <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=600&q=75&auto=format" alt="Actividades recreativas al aire libre" loading="lazy" width="600" height="400" />
+            </div>
+            <div class="lifestyle-body">
+              <h3>Actividades al aire libre</h3>
+              <p>Ciclismo, caminatas, picnics y deporte en espacios abiertos para toda la familia.</p>
+            </div>
+          </article>
+          <article class="lifestyle-card fade-up">
+            <div class="lifestyle-img">
+              <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=75&auto=format" alt="Atardecer tranquilo en la naturaleza" loading="lazy" width="600" height="400" />
+            </div>
+            <div class="lifestyle-body">
+              <h3>Tardes de paz</h3>
+              <p>Atardeceres únicos, brisa fresca y la calma que solo da vivir rodeado de verde.</p>
+            </div>
+          </article>
+          <article class="lifestyle-card fade-up">
+            <div class="lifestyle-img">
+              <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=600&q=75&auto=format" alt="Comunidad vecinal unida" loading="lazy" width="600" height="400" />
+            </div>
+            <div class="lifestyle-body">
+              <h3>Vida en comunidad</h3>
+              <p>Vecinos que se conocen, se cuidan y comparten el mismo sueño de vivir mejor.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section id="galeria" class="section section-soft">
+      <div class="container">
+        <div class="section-heading fade-up">
+          <span class="eyebrow">Galería</span>
+          <h2>Momentos que te esperan</h2>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item fade-up">
+            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=700&q=75&auto=format" alt="Familia feliz al aire libre" loading="lazy" width="700" height="500" />
+            <div class="gallery-overlay"><span>Familia</span></div>
+          </div>
+          <div class="gallery-item fade-up">
+            <img src="https://images.unsplash.com/photo-1476673160081-cf065607f449?w=700&q=75&auto=format" alt="Naturaleza tropical dominicana" loading="lazy" width="700" height="500" />
+            <div class="gallery-overlay"><span>Naturaleza</span></div>
+          </div>
+          <div class="gallery-item fade-up">
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=700&q=75&auto=format" alt="Árboles y zonas verdes" loading="lazy" width="700" height="500" />
+            <div class="gallery-overlay"><span>Espacios verdes</span></div>
+          </div>
+          <div class="gallery-item fade-up">
+            <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=700&q=75&auto=format" alt="Niños jugando en el parque" loading="lazy" width="700" height="500" />
+            <div class="gallery-overlay"><span>Infancia</span></div>
+          </div>
+          <div class="gallery-item fade-up">
+            <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=700&q=75&auto=format" alt="Paisaje natural con árboles" loading="lazy" width="700" height="500" />
+            <div class="gallery-overlay"><span>Paisaje</span></div>
+          </div>
+          <div class="gallery-item fade-up">
+            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=700&q=75&auto=format" alt="Pareja disfrutando al aire libre" loading="lazy" width="700" height="500" />
+            <div class="gallery-overlay"><span>Momentos</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESO -->
     <section id="financiamiento" class="section">
       <div class="container">
-        <div class="section-heading">
+        <div class="section-heading fade-up">
           <span class="eyebrow">Proceso</span>
           <h2>Así puedes comenzar</h2>
         </div>
         <div class="steps">
-          <article><span>1</span><h3>Solicita información</h3><p>Escríbenos por WhatsApp o completa el formulario.</p></article>
-          <article><span>2</span><h3>Conoce la disponibilidad</h3><p>Recibe información actualizada sobre solares disponibles.</p></article>
-          <article><span>3</span><h3>Separa tu solar</h3><p>Inicia el proceso desde RD$10,000, sujeto a confirmación.</p></article>
-          <article><span>4</span><h3>Elige tu modalidad</h3><p>Consulta las opciones de financiamiento aplicables.</p></article>
+          <article class="fade-up"><span>1</span><h3>Solicita información</h3><p>Escríbenos por WhatsApp o completa el formulario de contacto.</p></article>
+          <article class="fade-up"><span>2</span><h3>Conoce la disponibilidad</h3><p>Recibe información actualizada sobre solares disponibles.</p></article>
+          <article class="fade-up"><span>3</span><h3>Separa tu solar</h3><p>Inicia el proceso desde RD$10,000, sujeto a confirmación.</p></article>
+          <article class="fade-up"><span>4</span><h3>Elige tu modalidad</h3><p>Consulta las opciones de financiamiento aplicables.</p></article>
         </div>
         <div class="notice">Los precios, disponibilidad, requisitos y condiciones de financiamiento están sujetos a confirmación y aprobación.</div>
       </div>
     </section>
 
+    <!-- BIG CTA BANNER -->
+    <section class="cta-banner">
+      <div class="cta-banner-bg" aria-hidden="true"></div>
+      <div class="cta-banner-overlay" aria-hidden="true"></div>
+      <div class="container cta-banner-inner fade-up">
+        <h2>El lugar donde comienzan<br>las mejores historias.</h2>
+        <p>Da el primer paso hacia la vida que tu familia merece.</p>
+        <a class="btn btn-light whatsapp-visit-link" href="#" target="_blank" rel="noopener">Reserva tu visita</a>
+      </div>
+    </section>
+
+    <!-- UBICACIÓN -->
+    <section id="ubicacion" class="section">
+      <div class="container">
+        <div class="section-heading fade-up">
+          <span class="eyebrow">Ubicación</span>
+          <h2>Fácil de llegar, difícil de olvidar</h2>
+        </div>
+        <div class="location-premium fade-up">
+          <div class="location-map-card">
+            <div class="location-map-visual" aria-label="Mapa de Amelia Gardens">
+              <div class="map-pin-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="map-label">Amelia Gardens</div>
+              <div class="map-sublabel">Km 25, carretera Villa Mella–Yamasá<br>Santo Domingo Norte, Rep. Dom.</div>
+            </div>
+          </div>
+          <div class="location-info">
+            <div class="location-detail">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="var(--green-700)"/></svg>
+              <div>
+                <strong>Dirección</strong>
+                <span>Carretera Villa Mella–Yamasá, Km. 25<br>Santo Domingo Norte, República Dominicana</span>
+              </div>
+            </div>
+            <div class="location-detail">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" fill="var(--green-700)"/></svg>
+              <div>
+                <strong>Acceso</strong>
+                <span>Accesible desde la autopista Duarte y la carretera Villa Mella</span>
+              </div>
+            </div>
+            <div class="location-actions">
+              <a class="btn btn-primary maps-link" href="#" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="currentColor"/></svg>
+                Ver en Google Maps
+              </a>
+              <a class="btn btn-secondary whatsapp-visit-link" href="#" target="_blank" rel="noopener">Agenda una visita</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSTAGRAM -->
+    <section id="social" class="section section-soft">
+      <div class="container instagram-section fade-up">
+        <div class="instagram-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="20" height="20" rx="5.5" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="instagram-body">
+          <span class="eyebrow">Síguenos</span>
+          <h2>Conoce el avance del proyecto</h2>
+          <p>Actividades, novedades y los mejores momentos de nuestra comunidad en crecimiento.</p>
+          <a class="btn btn-primary instagram-link" href="#" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5" stroke="currentColor" stroke-width="2.2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2.2"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor"/></svg>
+            @ameliagardensrd
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
     <section id="contacto" class="section section-dark">
       <div class="container contact-grid">
-        <div>
+        <div class="fade-up">
           <span class="eyebrow eyebrow-light">Contacto</span>
           <h2>Recibe información y disponibilidad</h2>
           <p>Completa tus datos. Al enviar, se abrirá WhatsApp con tu solicitud lista para compartir.</p>
-          <ul class="contact-points">
-            <li>Respuesta directa por WhatsApp</li>
-            <li>Información de precios y disponibilidad</li>
-            <li>Coordinación de visitas</li>
-          </ul>
+
+          <div class="contact-channels">
+            <a class="contact-channel whatsapp-link" href="#" target="_blank" rel="noopener">
+              <span class="channel-icon channel-wa">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </span>
+              <div>
+                <strong>WhatsApp</strong>
+                <span>Respuesta directa e inmediata</span>
+              </div>
+            </a>
+            <a class="contact-channel instagram-link" href="#" target="_blank" rel="noopener">
+              <span class="channel-icon channel-ig">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+              </span>
+              <div>
+                <strong>Instagram</strong>
+                <span>@ameliagardensrd</span>
+              </div>
+            </a>
+            <a class="contact-channel maps-link" href="#" target="_blank" rel="noopener">
+              <span class="channel-icon channel-maps">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              </span>
+              <div>
+                <strong>Google Maps</strong>
+                <span>Km 25, carretera Yamasá</span>
+              </div>
+            </a>
+          </div>
         </div>
 
-        <form id="lead-form" class="lead-form" novalidate>
+        <form id="lead-form" class="lead-form fade-up" novalidate>
           <div class="form-row">
             <label>Nombre completo
               <input type="text" name="nombre" autocomplete="name" required />
@@ -204,48 +438,40 @@
             <span>Acepto ser contactado para recibir información sobre Amelia Gardens.</span>
           </label>
 
-          <button class="btn btn-primary btn-full" type="submit">Enviar por WhatsApp</button>
+          <button class="btn btn-primary btn-full" type="submit">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Enviar por WhatsApp
+          </button>
           <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container location-card">
-        <div>
-          <span class="eyebrow">Ubicación</span>
-          <h2>Km 25, carretera Yamasá</h2>
-          <p>República Dominicana. Solicita la ubicación y coordina tu visita con nuestro equipo.</p>
-        </div>
-        <a class="btn btn-secondary whatsapp-location-link" href="#" target="_blank" rel="noopener">Solicitar ubicación</a>
-      </div>
-    </section>
-
+    <!-- FAQ -->
     <section class="section section-soft">
       <div class="container faq-wrap">
-        <div class="section-heading">
+        <div class="section-heading fade-up">
           <span class="eyebrow">Preguntas frecuentes</span>
           <h2>Información básica antes de comenzar</h2>
         </div>
-
         <div class="faq">
-          <details>
+          <details class="fade-up">
             <summary>¿Desde qué precio están disponibles los solares?</summary>
             <p>Los solares se ofrecen desde RD$900,000, sujeto a disponibilidad y confirmación.</p>
           </details>
-          <details>
+          <details class="fade-up">
             <summary>¿Con cuánto puedo separar?</summary>
             <p>La separación inicia desde RD$10,000, según las condiciones aplicables.</p>
           </details>
-          <details>
+          <details class="fade-up">
             <summary>¿Hay facilidades de financiamiento?</summary>
             <p>Sí. Puedes solicitar información sobre las modalidades disponibles y sus requisitos.</p>
           </details>
-          <details>
+          <details class="fade-up">
             <summary>¿Cómo conozco la disponibilidad?</summary>
             <p>Escríbenos por WhatsApp para recibir la disponibilidad actualizada.</p>
           </details>
-          <details>
+          <details class="fade-up">
             <summary>¿Cómo puedo agendar una visita?</summary>
             <p>Puedes solicitarla por WhatsApp o mediante el formulario de contacto.</p>
           </details>
@@ -253,8 +479,9 @@
       </div>
     </section>
 
+    <!-- FINAL CTA -->
     <section class="final-cta">
-      <div class="container final-cta-inner">
+      <div class="container final-cta-inner fade-up">
         <div>
           <span class="eyebrow eyebrow-light">Amelia Gardens</span>
           <h2>Tu próximo paso puede comenzar hoy</h2>
@@ -265,6 +492,7 @@
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
@@ -272,28 +500,46 @@
           <span class="brand-mark">AG</span>
           <span>Amelia Gardens</span>
         </a>
-        <p>Km 25, carretera Yamasá, República Dominicana.</p>
+        <p>Carretera Villa Mella–Yamasá, Km. 25<br>Santo Domingo Norte, República Dominicana.</p>
+        <div class="footer-social">
+          <a class="social-icon instagram-link" href="#" target="_blank" rel="noopener" aria-label="Instagram de Amelia Gardens">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a class="social-icon whatsapp-link" href="#" target="_blank" rel="noopener" aria-label="WhatsApp de Amelia Gardens">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+          <a class="social-icon maps-link" href="#" target="_blank" rel="noopener" aria-label="Ver Amelia Gardens en Google Maps">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </a>
+        </div>
       </div>
       <div>
-        <strong>Enlaces</strong>
+        <strong>Explorar</strong>
         <a href="#proyecto">Proyecto</a>
         <a href="#beneficios">Beneficios</a>
-        <a href="#financiamiento">Financiamiento</a>
+        <a href="#lifestyle">Estilo de vida</a>
+        <a href="#galeria">Galería</a>
+        <a href="#financiamiento">Proceso</a>
         <a href="#contacto">Contacto</a>
       </div>
       <div>
-        <strong>Redes</strong>
-        <a href="https://www.instagram.com/ameliagardensrd/" target="_blank" rel="noopener">@ameliagardensrd</a>
+        <strong>Contacto</strong>
         <a class="whatsapp-link" href="#" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="instagram-link" href="#" target="_blank" rel="noopener">@ameliagardensrd</a>
+        <a class="maps-link" href="#" target="_blank" rel="noopener">Google Maps</a>
+        <span>Km 25, carretera Yamasá<br>Santo Domingo Norte</span>
       </div>
     </div>
     <div class="container footer-bottom">
-      <span>© <span id="year"></span> Amelia Gardens.</span>
+      <span>© <span id="year"></span> Amelia Gardens. Todos los derechos reservados.</span>
       <span>Precios y disponibilidad sujetos a confirmación.</span>
     </div>
   </footer>
 
-  <a class="floating-whatsapp whatsapp-link" href="#" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">WA</a>
+  <!-- Floating WhatsApp -->
+  <a class="floating-whatsapp whatsapp-link" href="#" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
 
   <script src="config.js"></script>
   <script src="script.js"></script>

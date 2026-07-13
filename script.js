@@ -1,5 +1,7 @@
 (() => {
   const config = window.AMELIA_CONFIG || {};
+
+  /* ===== WHATSAPP LINKS ===== */
   const number = String(config.whatsappNumber || "").replace(/\D/g, "");
   const baseMessage = "Hola, me interesa recibir información sobre los solares de Amelia Gardens.";
   const visitMessage = "Hola, me interesa agendar una visita a Amelia Gardens.";
@@ -17,6 +19,19 @@
     link.href = number ? waUrl(locationMessage) : "#contacto";
   });
 
+  /* ===== INSTAGRAM LINKS ===== */
+  const igUrl = config.instagramUrl || "https://instagram.com/ameliagardensrd";
+  document.querySelectorAll(".instagram-link").forEach(link => {
+    link.href = igUrl;
+  });
+
+  /* ===== GOOGLE MAPS LINKS ===== */
+  const mapsUrl = config.googleMapsUrl || "https://maps.app.goo.gl/K3VM1j5qKnEGbSj4A?g_st=ic";
+  document.querySelectorAll(".maps-link").forEach(link => {
+    link.href = mapsUrl;
+  });
+
+  /* ===== MOBILE NAV ===== */
   const navToggle = document.querySelector(".nav-toggle");
   const navMenu = document.querySelector(".nav-menu");
   if (navToggle && navMenu) {
@@ -30,6 +45,7 @@
     }));
   }
 
+  /* ===== LEAD FORM ===== */
   const form = document.getElementById("lead-form");
   const status = document.getElementById("form-status");
 
@@ -65,9 +81,11 @@
     });
   }
 
+  /* ===== YEAR ===== */
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 
+  /* ===== CANONICAL ===== */
   if (config.canonicalUrl) {
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) {
@@ -79,5 +97,36 @@
 
     const ogUrl = document.querySelector('meta[property="og:url"]');
     if (ogUrl) ogUrl.content = config.canonicalUrl;
+  }
+
+  /* ===== FADE-IN ANIMATIONS (Intersection Observer) ===== */
+  const fadeEls = document.querySelectorAll(".fade-up");
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          // Stagger siblings in the same parent
+          const siblings = [...entry.target.parentElement.querySelectorAll(".fade-up")];
+          const idx = siblings.indexOf(entry.target);
+          const delay = (idx % 6) * 80;
+          setTimeout(() => {
+            entry.target.classList.add("visible");
+          }, delay);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+
+    fadeEls.forEach(el => observer.observe(el));
+  } else {
+    // Fallback: show all immediately
+    fadeEls.forEach(el => el.classList.add("visible"));
+  }
+
+  /* ===== LAZY LOADING POLYFILL ===== */
+  if (!("loading" in HTMLImageElement.prototype)) {
+    document.querySelectorAll("img[loading=lazy]").forEach(img => {
+      img.src = img.src;
+    });
   }
 })();

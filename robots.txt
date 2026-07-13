@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /assets/
 
-Sitemap: https://TU-DOMINIO.com/sitemap.xml
+Sitemap: https://ameliagardensrd.com/sitemap.xml
