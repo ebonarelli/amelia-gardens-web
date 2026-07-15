@@ -1,0 +1,114 @@
+PROJECT: Amelia Gardens
+
+Apply ONLY the following visual changes.
+
+DO NOT redesign the website.
+DO NOT modify the lead form.
+DO NOT modify n8n.
+DO NOT modify Supabase.
+DO NOT modify the webhook.
+DO NOT modify WhatsApp functionality.
+Keep everything else exactly as it is.
+
+====================================================
+1. MAKE THE LOGO MUCH LARGER
+====================================================
+
+The current Amelia Gardens logos are too small and almost invisible.
+
+Increase their size significantly.
+
+Use the horizontal logo as the primary logo.
+
+Header:
+• Increase logo approximately 2–3x.
+• It should be clearly readable.
+
+Hero:
+• Replace the tiny floating logo with a large, centered logo that becomes part of the hero.
+• The logo should be a main branding element.
+
+Footer:
+• Increase logo size.
+• Make it clearly visible.
+
+Mobile:
+• Keep the logo responsive but still much larger than now.
+
+Do not distort the logo.
+Do not recreate it.
+Use only the real uploaded logo.
+
+====================================================
+2. REMOVE THE ENTIRE SECTION
+"IMAGINA TU NUEVA VIDA"
+====================================================
+
+Delete completely:
+
+• HTML
+• CSS
+• JS (if applicable)
+
+Remove every card contained in this section.
+
+After removal, adjust spacing so there are no empty spaces.
+
+====================================================
+3. REMOVE THE ENTIRE GALLERY
+====================================================
+
+Delete the complete gallery section.
+
+Remove:
+
+• Gallery title
+• Images
+• Masonry/grid
+• Related CSS
+• Related JS
+
+After removal the page should flow naturally.
+
+====================================================
+4. KEEP ONLY THE IMPORTANT VISUALS
+====================================================
+
+Maintain only the main visual sections.
+
+The website should feel cleaner and more premium.
+
+====================================================
+5. DO NOT CHANGE
+====================================================
+
+Do not change:
+
+• Hero text
+• Colors
+• Typography
+• Buttons
+• Navigation
+• Contact form
+• Google Maps
+• WhatsApp
+• n8n
+• Supabase
+• Prices
+• Animations
+
+====================================================
+6. FINAL VALIDATION
+====================================================
+
+Verify:
+
+✓ Logo is now large and clearly visible.
+✓ "Imagina tu nueva vida" no longer exists.
+✓ Gallery no longer exists.
+✓ No blank spaces remain.
+✓ Mobile layout still works.
+✓ Desktop layout still works.
+✓ All existing functionality remains operational.
+
+Deliver a summary listing every modified file.
