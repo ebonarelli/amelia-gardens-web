@@ -161,7 +161,7 @@ h3 { font-size: 1.15rem; letter-spacing: -.02em; margin: 0 0 10px; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url('https://images.unsplash.com/photo-1448375240586-882707db888b?w=1600&q=80&auto=format') center/cover no-repeat;
+  background: url('assets/images/hero-fondo.jpg') center/cover no-repeat;
   transform: scale(1.04);
   transition: transform 8s ease;
 }
@@ -269,13 +269,21 @@ h3 { font-size: 1.15rem; letter-spacing: -.02em; margin: 0 0 10px; }
 .lifestyle-body { padding: 22px 24px 26px; }
 .lifestyle-body h3 { margin-bottom: 8px; font-size: 1.08rem; }
 .lifestyle-body p { color: var(--muted); margin: 0; font-size: .96rem; line-height: 1.6; }
+.lifestyle-card-text { display: flex; flex-direction: column; justify-content: flex-start; }
+.lifestyle-card-text .lifestyle-body { padding: 26px 24px 28px; flex: 1; }
+.lifestyle-icon { font-size: 2rem; display: block; padding: 22px 24px 0; line-height: 1; }
 
 /* ===== GALLERY ===== */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 16px;
 }
+.gallery-item:nth-child(1),
+.gallery-item:nth-child(2) { grid-column: span 3; }
+.gallery-item:nth-child(3),
+.gallery-item:nth-child(4),
+.gallery-item:nth-child(5) { grid-column: span 2; }
 .gallery-item {
   position: relative;
   border-radius: var(--radius-sm);
@@ -339,7 +347,7 @@ h3 { font-size: 1.15rem; letter-spacing: -.02em; margin: 0 0 10px; }
 .cta-banner-bg {
   position: absolute;
   inset: 0;
-  background: url('https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1600&q=80&auto=format') center/cover no-repeat;
+  background: url('assets/images/cta-fondo.jpg') center/cover no-repeat;
 }
 .cta-banner-overlay {
   position: absolute;
@@ -584,6 +592,11 @@ h3 { font-size: 1.15rem; letter-spacing: -.02em; margin: 0 0 10px; }
   .cards-grid { grid-template-columns: repeat(2,1fr); }
   .lifestyle-grid { grid-template-columns: repeat(2,1fr); }
   .gallery-grid { grid-template-columns: repeat(2,1fr); }
+  .gallery-item:nth-child(1),
+  .gallery-item:nth-child(2),
+  .gallery-item:nth-child(3),
+  .gallery-item:nth-child(4),
+  .gallery-item:nth-child(5) { grid-column: auto; }
   .steps { grid-template-columns: repeat(2,1fr); }
   .contact-grid { grid-template-columns: 1fr; }
   .location-premium { grid-template-columns: 1fr; }

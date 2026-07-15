@@ -1,0 +1,129 @@
+PROJECT: Amelia Gardens website
+
+Make only the changes listed below. Do not redesign, rebuild, restructure, or replace the existing website.
+
+IMPORTANT:
+- Preserve the current layout, colors, typography, sections, form, WhatsApp flow, n8n webhook, Supabase integration, mobile behavior, animations, and existing functionality.
+- Do not change script.js lead submission logic.
+- Do not change the webhook URL.
+- Do not add new platforms, frameworks, dependencies, databases, or services.
+- Do not generate or use AI-created logos.
+- Use the real Amelia Gardens logo files already provided.
+
+CHANGES REQUIRED
+
+1. CORRECT GOOGLE MAPS LINK
+
+Replace every current Amelia Gardens Google Maps link with exactly:
+
+https://maps.app.goo.gl/xnTaY773AUuoj8ck7?g_st=ic
+
+Check:
+- Header links
+- Location buttons
+- Map section
+- Footer
+- config.js
+- Any hidden mobile links
+
+Do not use or retain the previous Google Maps URL.
+
+2. ADD THE REAL AMELIA GARDENS LOGO
+
+Use the uploaded Amelia Gardens logo files.
+
+Use the horizontal logo with “Solares Residenciales” where there is enough width.
+
+Use the vertical logo only where the horizontal version does not fit properly.
+
+Add the real logo in these locations where appropriate without changing the current structure:
+
+- Main header/navigation
+- Hero section
+- Footer
+- Mobile navigation if space permits
+
+Requirements:
+- Keep the logo proportional.
+- Do not stretch, crop, distort, recolor, redraw, or recreate it.
+- Optimize display size for desktop and mobile.
+- Keep the surrounding background clean and readable.
+- Do not place the logo repeatedly in a way that looks excessive.
+
+Store the logo files inside the existing assets folder using clear filenames such as:
+
+assets/amelia-gardens-logo-horizontal.jpg
+assets/amelia-gardens-logo-vertical.jpg
+
+3. REDUCE THE WEBSITE TO EXACTLY 5 MAIN PHOTOS
+
+Keep exactly five principal lifestyle/project photographs on the page.
+
+The five categories must be:
+
+1. Family enjoying a green outdoor environment
+2. Large green trees and nature
+3. People exercising or walking outdoors
+4. Residential lots or project landscape
+5. Project entrance, access, or representative Amelia Gardens image
+
+Remove extra, repetitive, broken, blank, or unnecessary images from the visible page.
+
+Do not remove:
+- The Amelia Gardens logos
+- Icons
+- Favicon
+- Decorative SVG elements
+
+Photo requirements:
+- Use existing working photographs whenever possible.
+- Do not insert images with broken URLs.
+- Each image must have a real local file inside assets.
+- Use correct file extensions.
+- Add descriptive Spanish alt text.
+- Preserve responsive behavior.
+- Use loading="lazy" except for the main hero image.
+- Ensure all five images display correctly on Replit and Cloudflare.
+
+4. DO NOT CHANGE FUNCTIONALITY
+
+Do not modify:
+- Lead form fields
+- Form validation
+- WhatsApp number
+- WhatsApp opening behavior
+- n8n integration
+- Supabase integration
+- Webhook URL
+- Instagram link
+- Pricing
+- Text content, except minor spacing needed to fit the logo
+- Existing navigation structure
+- Existing mobile menu
+- Existing CSS style system
+
+5. VALIDATION BEFORE FINISHING
+
+Before completing the task:
+
+- Verify the new Google Maps link opens the correct Amelia Gardens location.
+- Verify exactly five main photos are visible.
+- Verify every visible photo loads successfully.
+- Verify the real logo appears correctly.
+- Verify the website works on desktop and mobile.
+- Verify the lead form still submits to n8n and then opens WhatsApp.
+- Verify no broken image placeholders appear.
+- Verify no existing functionality was removed.
+
+DELIVERABLE
+
+At the end, provide a concise change report containing:
+
+- Files modified
+- Logo files added
+- Photos kept
+- Photos removed
+- Google Maps link updated
+- Confirmation that the form, n8n, Supabase, and WhatsApp behavior were not changed
+
+Do not make any other improvements or recommendations.

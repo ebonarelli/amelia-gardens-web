@@ -4,5 +4,5 @@ window.AMELIA_CONFIG = {
   formEndpoint: "",
   instagramUrl: "https://instagram.com/ameliagardensrd",
   instagramHandle: "@ameliagardensrd",
-  googleMapsUrl: "https://maps.app.goo.gl/K3VM1j5qKnEGbSj4A?g_st=ic"
+  googleMapsUrl: "https://maps.app.goo.gl/xnTaY773AUuoj8ck7?g_st=ic"
 };

@@ -26,7 +26,7 @@
   });
 
   /* ===== GOOGLE MAPS LINKS ===== */
-  const mapsUrl = config.googleMapsUrl || "https://maps.app.goo.gl/K3VM1j5qKnEGbSj4A?g_st=ic";
+  const mapsUrl = config.googleMapsUrl || "https://maps.app.goo.gl/xnTaY773AUuoj8ck7?g_st=ic";
   document.querySelectorAll(".maps-link").forEach(link => {
     link.href = mapsUrl;
   });
