@@ -49,8 +49,11 @@
   const form = document.getElementById("lead-form");
   const status = document.getElementById("form-status");
 
+  const webhookUrl =
+    "https://reading-postal-mas-andrew.trycloudflare.com/webhook/16a31e9e-f22d-48b9-8133-c3b12b1cfd94";
+
   if (form) {
-    form.addEventListener("submit", (event) => {
+    form.addEventListener("submit", async (event) => {
       event.preventDefault();
 
       if (!form.checkValidity()) {
@@ -59,25 +62,58 @@
         return;
       }
 
-      if (!number) {
-        status.textContent = "El número de WhatsApp aún no está configurado.";
-        return;
-      }
-
       const data = new FormData(form);
-      const message = [
-        "Hola, me interesa recibir información sobre Amelia Gardens.",
-        "",
-        `Nombre: ${data.get("nombre") || ""}`,
-        `Teléfono: ${data.get("telefono") || ""}`,
-        `Correo: ${data.get("email") || "No indicado"}`,
-        `Método preferido: ${data.get("metodo") || "WhatsApp"}`,
-        `Motivo: ${data.get("motivo") || "Información general"}`,
-        `Mensaje: ${data.get("mensaje") || "Sin mensaje adicional"}`
-      ].join("\n");
 
-      status.textContent = "Abriendo WhatsApp...";
-      window.open(waUrl(message), "_blank", "noopener");
+      const lead = {
+        nombre: String(data.get("nombre") || "").trim(),
+        telefono: String(data.get("telefono") || "").trim(),
+        email: String(data.get("email") || "").trim(),
+        interes: String(
+          data.get("motivo") ||
+          data.get("interes") ||
+          "Información general"
+        ).trim(),
+        mensaje: String(data.get("mensaje") || "").trim()
+      };
+
+      try {
+        status.textContent = "Enviando solicitud...";
+
+        const response = await fetch(webhookUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(lead)
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+
+        status.textContent =
+          "Solicitud recibida. Te contactaremos próximamente.";
+
+        form.reset();
+
+        if (number) {
+          const message = [
+            "Hola, acabo de solicitar información sobre Amelia Gardens.",
+            "",
+            `Nombre: ${lead.nombre}`,
+            `Teléfono: ${lead.telefono}`,
+            `Correo: ${lead.email || "No indicado"}`,
+            `Interés: ${lead.interes}`,
+            `Mensaje: ${lead.mensaje || "Sin mensaje adicional"}`
+          ].join("\n");
+
+          window.open(waUrl(message), "_blank", "noopener");
+        }
+      } catch (error) {
+        console.error("Error enviando lead:", error);
+        status.textContent =
+          "No pudimos enviar la solicitud. Intenta nuevamente o escríbenos por WhatsApp.";
+      }
     });
   }
 
