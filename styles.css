@@ -82,10 +82,7 @@ button, input, select, textarea { font: inherit; }
 .hero-logo-wrap {
   display: block;
   width: fit-content;
-  background: rgba(255,255,255,.93);
-  border-radius: 14px;
-  padding: 14px 20px;
-  margin: 0 auto 36px;
+  margin: 0 0 36px;
   line-height: 0;
 }
 .logo-hero {
@@ -93,6 +90,8 @@ button, input, select, textarea { font: inherit; }
   width: auto;
   display: block;
   object-fit: contain;
+  border-radius: 6px;
+  filter: drop-shadow(0 6px 24px rgba(0,0,0,.6));
 }
 .logo-footer-wrap {
   display: inline-block;
@@ -192,7 +191,7 @@ h3 { font-size: 1.15rem; letter-spacing: -.02em; margin: 0 0 10px; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url('assets/images/hero-fondo.jpg') center/cover no-repeat;
+  background: url('assets/images/familia-aire-libre.jpg') center/cover no-repeat;
   transform: scale(1.04);
   transition: transform 8s ease;
 }
@@ -270,6 +269,31 @@ h3 { font-size: 1.15rem; letter-spacing: -.02em; margin: 0 0 10px; }
 }
 .info-card p { color: var(--muted); margin: 0; font-size: 1rem; line-height: 1.6; }
 
+
+/* ===== LIFESTYLE PHOTO GRID ===== */
+.fotos-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+}
+.foto-item:nth-child(1),
+.foto-item:nth-child(2) { grid-column: span 3; }
+.foto-item:nth-child(3),
+.foto-item:nth-child(4),
+.foto-item:nth-child(5) { grid-column: span 2; }
+.foto-item {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+.foto-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s ease;
+  display: block;
+}
+.foto-item:hover img { transform: scale(1.04); }
 
 /* ===== STEPS ===== */
 .steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
@@ -592,6 +616,12 @@ h3 { font-size: 1.15rem; letter-spacing: -.02em; margin: 0 0 10px; }
   .two-col { grid-template-columns: 1fr; gap: 40px; }
   .cards-grid { grid-template-columns: repeat(2,1fr); }
   .steps { grid-template-columns: repeat(2,1fr); }
+  .fotos-grid { grid-template-columns: repeat(2,1fr); }
+  .foto-item:nth-child(1),
+  .foto-item:nth-child(2),
+  .foto-item:nth-child(3),
+  .foto-item:nth-child(4),
+  .foto-item:nth-child(5) { grid-column: auto; }
   .contact-grid { grid-template-columns: 1fr; }
   .location-premium { grid-template-columns: 1fr; }
   .instagram-section { flex-direction: column; text-align: center; padding: 40px 32px; gap: 28px; }
@@ -612,6 +642,7 @@ h3 { font-size: 1.15rem; letter-spacing: -.02em; margin: 0 0 10px; }
   .stats article:nth-child(3) { border-right: 1px solid rgba(255,255,255,.1); }
   .section { padding: 72px 0; }
   .cards-grid,
+  .fotos-grid,
   .steps,
   .form-row,
   .footer-grid { grid-template-columns: 1fr; }
