@@ -48,13 +48,18 @@
   /* ===== LEAD FORM ===== */
   const form = document.getElementById("lead-form");
   const status = document.getElementById("form-status");
+  const submitBtn = document.getElementById("submit-btn");
 
   const webhookUrl =
     "https://reading-postal-mas-andrew.trycloudflare.com/webhook/16a31e9e-f22d-48b9-8133-c3b12b1cfd94";
 
+  let submitting = false;
+
   if (form) {
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
+
+      if (submitting) return;
 
       if (!form.checkValidity()) {
         form.reportValidity();
@@ -63,6 +68,22 @@
       }
 
       const data = new FormData(form);
+      const metodoCon = String(data.get("metodo_contacto") || "").trim();
+
+      if (!metodoCon) {
+        status.textContent = "Por favor selecciona cómo prefieres ser contactado.";
+        return;
+      }
+
+      if (metodoCon === "correo") {
+        const emailVal = String(data.get("email") || "").trim();
+        if (!emailVal || !emailVal.includes("@")) {
+          status.textContent = "Por favor ingresa un correo electrónico válido para recibir información.";
+          const emailInput = form.querySelector('[name="email"]');
+          if (emailInput) emailInput.focus();
+          return;
+        }
+      }
 
       const lead = {
         nombre: String(data.get("nombre") || "").trim(),
@@ -73,17 +94,21 @@
           data.get("interes") ||
           "Información general"
         ).trim(),
-        mensaje: String(data.get("mensaje") || "").trim()
+        mensaje: String(data.get("mensaje") || "").trim(),
+        metodo_contacto: metodoCon
       };
 
-      try {
-        status.textContent = "Enviando solicitud...";
+      submitting = true;
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Enviando solicitud...";
+      }
+      status.textContent = "";
 
+      try {
         const response = await fetch(webhookUrl, {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify(lead)
         });
 
@@ -91,12 +116,9 @@
           throw new Error(`HTTP ${response.status}`);
         }
 
-        status.textContent =
-          "Solicitud recibida. Te contactaremos próximamente.";
-
         form.reset();
 
-        if (number) {
+        if (metodoCon === "whatsapp" && number) {
           const message = [
             "Hola, acabo de solicitar información sobre Amelia Gardens.",
             "",
@@ -106,13 +128,25 @@
             `Interés: ${lead.interes}`,
             `Mensaje: ${lead.mensaje || "Sin mensaje adicional"}`
           ].join("\n");
-
+          status.textContent = "Solicitud recibida. Abriendo WhatsApp...";
           window.open(waUrl(message), "_blank", "noopener");
+        } else if (metodoCon === "correo") {
+          status.textContent =
+            "Gracias. Hemos enviado la información a tu correo electrónico. Si no la encuentras, revisa tu carpeta de spam.";
+        } else {
+          status.textContent =
+            "Gracias. Uno de nuestros asesores se pondrá en contacto contigo lo antes posible.";
         }
       } catch (error) {
         console.error("Error enviando lead:", error);
         status.textContent =
           "No pudimos enviar la solicitud. Intenta nuevamente o escríbenos por WhatsApp.";
+      } finally {
+        submitting = false;
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Enviar solicitud";
+        }
       }
     });
   }

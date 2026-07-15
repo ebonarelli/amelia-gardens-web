@@ -452,6 +452,47 @@ h3 { font-size: 1.15rem; letter-spacing: -.02em; margin: 0 0 10px; }
 .consent { grid-template-columns: 22px 1fr !important; align-items: start; font-weight: 500 !important; }
 .consent input { width: auto; margin-top: 4px; }
 .form-status { min-height: 24px; margin: 10px 0 0; font-size: .9rem; }
+/* ===== CONTACT METHOD RADIO GROUP ===== */
+.contact-method-group {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px 10px;
+  margin-bottom: 16px;
+  background: var(--green-50);
+}
+.contact-method-group legend {
+  font-weight: 750;
+  font-size: .92rem;
+  padding: 0 6px;
+  color: var(--ink);
+  line-height: 1.4;
+}
+.required-mark { color: var(--green-700); }
+.contact-method-option {
+  display: flex !important;
+  grid-template-columns: unset !important;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  font-weight: 500;
+  font-size: .95rem;
+  cursor: pointer;
+  padding: 9px 12px;
+  border-radius: 8px;
+  transition: background var(--transition);
+  margin-bottom: 0;
+}
+.contact-method-option:hover { background: var(--green-100); }
+.contact-method-option input[type="radio"] {
+  width: 18px !important;
+  height: 18px !important;
+  flex-shrink: 0;
+  accent-color: var(--green-700);
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+}
 
 /* ===== FAQ ===== */
 .faq-wrap { max-width: 800px; }

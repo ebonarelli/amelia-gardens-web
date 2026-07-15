@@ -1,0 +1,188 @@
+PROJECT: Amelia Gardens
+
+Modify ONLY the lead capture flow.
+
+Do NOT redesign the website.
+Do NOT change colors, layout, sections, animations, or styling.
+Do NOT modify Supabase, n8n connection, or existing webhook.
+Keep all existing functionality.
+
+========================================================
+NEW CONTACT FLOW
+========================================================
+
+The contact form must allow the visitor to choose how they want to be contacted.
+
+Replace the current contact preference with these three options:
+
+1. 📧 Recibir información por correo electrónico
+2. 💬 Contactarme por WhatsApp
+3. 📞 Quiero hablar con un asesor
+
+Make this field required.
+
+========================================================
+FORM BEHAVIOR
+========================================================
+
+The form must ALWAYS:
+
+1. Validate required fields.
+2. Send the lead to the existing n8n webhook.
+3. Save the lead in Supabase.
+
+Then perform the selected action.
+
+--------------------------------------------------------
+OPTION 1
+EMAIL
+--------------------------------------------------------
+
+If the user selects:
+
+"Recibir información por correo electrónico"
+
+DO NOT open WhatsApp.
+
+Instead:
+
+• Show a success message:
+
+"Gracias. Hemos enviado la información a tu correo electrónico. Si no la encuentras, revisa tu carpeta de spam."
+
+n8n will later send the email automatically.
+
+--------------------------------------------------------
+OPTION 2
+WHATSAPP
+--------------------------------------------------------
+
+If the user selects:
+
+"Contactarme por WhatsApp"
+
+After the webhook returns success:
+
+Open WhatsApp exactly as it currently works.
+
+Keep the existing WhatsApp message.
+
+--------------------------------------------------------
+OPTION 3
+ADVISOR
+--------------------------------------------------------
+
+If the user selects:
+
+"Quiero hablar con un asesor"
+
+Do NOT open WhatsApp.
+
+Show:
+
+"Gracias. Uno de nuestros asesores se pondrá en contacto contigo lo antes posible."
+
+========================================================
+DATA SENT TO N8N
+========================================================
+
+Add a new JSON field:
+
+metodo_contacto
+
+Possible values:
+
+correo
+whatsapp
+asesor
+
+Example:
+
+{
+  "nombre": "...",
+  "telefono": "...",
+  "email": "...",
+  "interes": "...",
+  "mensaje": "...",
+  "metodo_contacto": "correo"
+}
+
+========================================================
+SUPABASE
+========================================================
+
+Add a new column if it doesn't exist:
+
+metodo_contacto
+
+Store:
+
+correo
+
+whatsapp
+
+asesor
+
+========================================================
+UX
+========================================================
+
+Disable the submit button while sending.
+
+Show:
+
+Enviando solicitud...
+
+Prevent duplicate submissions.
+
+Clear the form only after a successful response.
+
+========================================================
+DO NOT CHANGE
+========================================================
+
+Do NOT modify:
+
+• Google Maps
+• Logo
+• Images
+• CSS
+• Hero
+• Navigation
+• Footer
+• n8n webhook URL
+• Supabase credentials
+• Existing database connection
+
+========================================================
+VALIDATION
+========================================================
+
+Test all three flows.
+
+1.
+Email
+→ Saves to Supabase
+→ Sends webhook
+→ Shows success message
+→ Does NOT open WhatsApp
+
+2.
+WhatsApp
+→ Saves to Supabase
+→ Sends webhook
+→ Opens WhatsApp
+
+3.
+Advisor
+→ Saves to Supabase
+→ Sends webhook
+→ Shows advisor confirmation
+→ Does NOT open WhatsApp
+
+At the end provide:
+
+• Files modified
+• Database changes
+• JSON payload example
+• Confirmation that all three contact methods work.
