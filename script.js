@@ -103,30 +103,36 @@
 
       const waLink = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waMessage)}`;
 
-      /* --- Mostrar estado y abrir WhatsApp DENTRO del evento (sin async previo) --- */
-      status.textContent = "Abriendo WhatsApp para completar tu solicitud…";
+      /* --- Abrir WhatsApp sincrónicamente dentro del evento submit (no se bloquea) --- */
+      const waWin = window.open(waLink, "_blank", "noopener,noreferrer");
+
+      /* --- Mostrar estado con link manual de respaldo --- */
+      status.innerHTML =
+        "✅ Solicitud lista. <a href=\"" + waLink + "\" target=\"_blank\" rel=\"noopener noreferrer\" " +
+        "style=\"color:inherit;font-weight:700;text-decoration:underline;\">Abrir WhatsApp</a> " +
+        "si no se abrió automáticamente.";
+
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.textContent = "Abriendo WhatsApp…";
+        submitBtn.textContent = "Enviando…";
       }
 
-      window.location.href = waLink;
-
-      /* --- Enviar webhook en segundo plano (no bloquea la apertura de WhatsApp) --- */
+      /* --- Enviar webhook en segundo plano --- */
       fetch(webhookUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ nombre, telefono, email, metodo_contacto: metodo, interes: motivo, mensaje })
       }).catch(() => {});
 
-      /* --- Restaurar formulario por si el navegador no navega (desktop con app) --- */
+      /* --- Resetear formulario y restaurar botón --- */
       setTimeout(() => {
         form.reset();
+        status.innerHTML = "";
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.textContent = "Enviar solicitud";
         }
-      }, 3000);
+      }, 8000);
     });
   }
 
