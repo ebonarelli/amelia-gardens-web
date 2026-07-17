@@ -53,101 +53,80 @@
   const webhookUrl =
     "https://reading-postal-mas-andrew.trycloudflare.com/webhook/16a31e9e-f22d-48b9-8133-c3b12b1cfd94";
 
-  let submitting = false;
+  const WA_NUMBER = "18299028888";
 
   if (form) {
-    form.addEventListener("submit", async (event) => {
+    form.addEventListener("submit", (event) => {
       event.preventDefault();
 
-      if (submitting) return;
-
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        status.textContent = "Completa los campos requeridos.";
-        return;
-      }
-
       const data = new FormData(form);
-      const metodoCon = String(data.get("metodo_contacto") || "").trim();
+      const nombre   = String(data.get("nombre")   || "").trim();
+      const telefono = String(data.get("telefono") || "").trim();
+      const email    = String(data.get("email")    || "").trim();
+      const metodo   = String(data.get("metodo_contacto") || "").trim();
+      const motivo   = String(data.get("motivo")   || "Información general").trim();
+      const mensaje  = String(data.get("mensaje")  || "").trim();
+      const consent  = data.get("consentimiento");
 
-      if (!metodoCon) {
-        status.textContent = "Por favor selecciona cómo prefieres ser contactado.";
+      /* --- Validación sincrónica --- */
+      if (!nombre) {
+        status.textContent = "Por favor ingresa tu nombre completo.";
+        form.querySelector('[name="nombre"]').focus();
+        return;
+      }
+      if (!telefono) {
+        status.textContent = "Por favor ingresa tu número de teléfono.";
+        form.querySelector('[name="telefono"]').focus();
+        return;
+      }
+      if (!consent) {
+        status.textContent = "Debes aceptar ser contactado para continuar.";
         return;
       }
 
-      if (metodoCon === "correo") {
-        const emailVal = String(data.get("email") || "").trim();
-        if (!emailVal || !emailVal.includes("@")) {
-          status.textContent = "Por favor ingresa un correo electrónico válido para recibir información.";
-          const emailInput = form.querySelector('[name="email"]');
-          if (emailInput) emailInput.focus();
-          return;
-        }
-      }
+      /* --- Construir mensaje en el formato requerido --- */
+      const metodoPrint = metodo === "correo"   ? "Correo electrónico"
+                        : metodo === "whatsapp" ? "WhatsApp"
+                        : metodo === "asesor"   ? "Llamada con asesor"
+                        : "No indicado";
 
-      const lead = {
-        nombre: String(data.get("nombre") || "").trim(),
-        telefono: String(data.get("telefono") || "").trim(),
-        email: String(data.get("email") || "").trim(),
-        interes: String(
-          data.get("motivo") ||
-          data.get("interes") ||
-          "Información general"
-        ).trim(),
-        mensaje: String(data.get("mensaje") || "").trim(),
-        metodo_contacto: metodoCon
-      };
+      const waMessage = [
+        "Hola, quiero recibir información sobre Amelia Gardens.",
+        "",
+        `Nombre: ${nombre}`,
+        `Teléfono: ${telefono}`,
+        `Correo: ${email || "No indicado"}`,
+        `Forma de contacto: ${metodoPrint}`,
+        `Consulta: ${motivo}`,
+        `Mensaje: ${mensaje || "Sin mensaje adicional"}`
+      ].join("\n");
 
-      submitting = true;
+      const waLink = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waMessage)}`;
+
+      /* --- Mostrar estado y abrir WhatsApp DENTRO del evento (sin async previo) --- */
+      status.textContent = "Abriendo WhatsApp para completar tu solicitud…";
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.textContent = "Enviando solicitud...";
+        submitBtn.textContent = "Abriendo WhatsApp…";
       }
-      status.textContent = "";
 
-      try {
-        const response = await fetch(webhookUrl, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(lead)
-        });
+      window.location.href = waLink;
 
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}`);
-        }
+      /* --- Enviar webhook en segundo plano (no bloquea la apertura de WhatsApp) --- */
+      fetch(webhookUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nombre, telefono, email, metodo_contacto: metodo, interes: motivo, mensaje })
+      }).catch(() => {});
 
+      /* --- Restaurar formulario por si el navegador no navega (desktop con app) --- */
+      setTimeout(() => {
         form.reset();
-
-        if (metodoCon === "whatsapp" && number) {
-          const message = [
-            "Hola, acabo de solicitar información sobre Amelia Gardens.",
-            "",
-            `Nombre: ${lead.nombre}`,
-            `Teléfono: ${lead.telefono}`,
-            `Correo: ${lead.email || "No indicado"}`,
-            `Interés: ${lead.interes}`,
-            `Mensaje: ${lead.mensaje || "Sin mensaje adicional"}`
-          ].join("\n");
-          status.textContent = "Solicitud recibida. Abriendo WhatsApp...";
-          window.open(waUrl(message), "_blank", "noopener");
-        } else if (metodoCon === "correo") {
-          status.textContent =
-            "Gracias. Hemos enviado la información a tu correo electrónico. Si no la encuentras, revisa tu carpeta de spam.";
-        } else {
-          status.textContent =
-            "Gracias. Uno de nuestros asesores se pondrá en contacto contigo lo antes posible.";
-        }
-      } catch (error) {
-        console.error("Error enviando lead:", error);
-        status.textContent =
-          "No pudimos enviar la solicitud. Intenta nuevamente o escríbenos por WhatsApp.";
-      } finally {
-        submitting = false;
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.textContent = "Enviar solicitud";
         }
-      }
+      }, 3000);
     });
   }
 

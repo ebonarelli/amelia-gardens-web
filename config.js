@@ -1,5 +1,5 @@
 window.AMELIA_CONFIG = {
-  whatsappNumber: "18496264949",
+  whatsappNumber: "18299028888",
   canonicalUrl: "",
   formEndpoint: "",
   instagramUrl: "https://instagram.com/ameliagardensrd",
