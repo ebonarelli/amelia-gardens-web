@@ -83,6 +83,10 @@
         status.textContent = "Debes aceptar ser contactado para continuar.";
         return;
       }
+      if (!metodo) {
+        status.textContent = "Por favor indica cómo prefieres que te contactemos.";
+        return;
+      }
 
       /* --- Construir mensaje en el formato requerido --- */
       const metodoPrint = metodo === "correo"   ? "Correo electrónico"
