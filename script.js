@@ -103,14 +103,16 @@
 
       const waLink = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waMessage)}`;
 
-      /* --- Abrir WhatsApp sincrónicamente dentro del evento submit (no se bloquea) --- */
-      const waWin = window.open(waLink, "_blank", "noopener,noreferrer");
-
-      /* --- Mostrar estado con link manual de respaldo --- */
-      status.innerHTML =
-        "✅ Solicitud lista. <a href=\"" + waLink + "\" target=\"_blank\" rel=\"noopener noreferrer\" " +
-        "style=\"color:inherit;font-weight:700;text-decoration:underline;\">Abrir WhatsApp</a> " +
-        "si no se abrió automáticamente.";
+      /* --- Solo abrir WhatsApp si el método NO es correo electrónico --- */
+      if (metodo !== "correo") {
+        window.open(waLink, "_blank", "noopener,noreferrer");
+        status.innerHTML =
+          "✅ Solicitud lista. <a href=\"" + waLink + "\" target=\"_blank\" rel=\"noopener noreferrer\" " +
+          "style=\"color:inherit;font-weight:700;text-decoration:underline;\">Abrir WhatsApp</a> " +
+          "si no se abrió automáticamente.";
+      } else {
+        status.textContent = "✅ Solicitud recibida. Te contactaremos pronto por correo electrónico.";
+      }
 
       if (submitBtn) {
         submitBtn.disabled = true;
