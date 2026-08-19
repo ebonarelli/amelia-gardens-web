@@ -85,6 +85,23 @@
               </div>
               <div id="approvalMsg" class="message"></div>
             </section>
+
+            <section class="glass-panel execution-panel">
+              <div class="panel-head"><div><span class="spark">⌘</span><b>Execution Control</b></div><span id="executionMode" class="safe-pill">READ-ONLY SAFE MODE</span></div>
+              <div class="connection-row">
+                <div class="connection-copy">
+                  <div class="connection-title"><span id="githubDot" class="connection-dot"></span><b>GitHub</b></div>
+                  <p id="githubStatus">Checking secure repository access…</p>
+                </div>
+                <button id="connectGitHubBtn" class="secondary-btn">Connect GitHub</button>
+              </div>
+              <div class="execution-actions">
+                <button id="executeBtn" class="gradient-btn execute-btn" disabled>▶ Execute Plan</button>
+                <button id="viewProgressBtn" class="secondary-btn" disabled>View Progress</button>
+                <button id="pauseBtn" class="secondary-btn" disabled>Pause</button>
+              </div>
+              <div id="executionLog" class="execution-log"><div class="execution-empty">Approve a plan and connect GitHub to start safe execution.</div></div>
+            </section>
           </div>
 
           <aside class="glass-panel intelligence-panel">
@@ -99,6 +116,11 @@
               <div class="metric"><span>Project Agents</span><b>4</b><small>planned</small></div>
               <div class="metric"><span>Approval Gate</span><b>100%</b><small>enforced</small></div>
               <div class="metric"><span>Critical Errors</span><b>0</b><small>production</small></div>
+            </div>
+            <div class="repo-card">
+              <div class="repo-card-head"><span>Repository Access</span><b id="repoAccessBadge">LOCKED</b></div>
+              <p id="repoName">Select a project</p>
+              <small>Read-only analysis first. No merge, deploy or production writes.</small>
             </div>
           </aside>
         </section>
