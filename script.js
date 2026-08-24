@@ -146,6 +146,16 @@
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 
+  /* ===== OG IMAGE — convertir a URL absoluta para crawlers sociales ===== */
+  (function () {
+    const logoPath = "assets/amelia-gardens-logo-horizontal.jpg";
+    const absUrl = window.location.origin + "/" + logoPath;
+    ["meta[property='og:image']", "meta[name='twitter:image']"].forEach(function (sel) {
+      const el = document.querySelector(sel);
+      if (el) el.setAttribute("content", absUrl);
+    });
+  })();
+
   /* ===== CANONICAL ===== */
   if (config.canonicalUrl) {
     let canonical = document.querySelector('link[rel="canonical"]');
